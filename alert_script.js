@@ -16,8 +16,17 @@ class AlertUI {
     const span = document.createElement("span");
     const close = document.createElement("button");
 
-    if (this.state.mode !== "default") {
+    if (this.state.mode !== "default" && this.state.type !== "default") {
+      alertBox.classList.add(
+        "alert-box",
+        "alert-active",
+        `${this.state.mode}`,
+        `${this.state.type}`
+      );
+    } else if (this.state.mode !== "default" && this.state.type === "default") {
       alertBox.classList.add("alert-box", "alert-active", `${this.state.mode}`);
+    } else if (this.state.mode === "default" && this.state.type !== "default") {
+      alertBox.classList.add("alert-box", "alert-active", `${this.state.type}`);
     } else {
       alertBox.classList.add("alert-box", "alert-active");
     }
@@ -34,6 +43,11 @@ class AlertUI {
     alertBox.append(close);
 
     document.querySelector("body").prepend(alertBox);
+
+    setTimeout(() => {
+      alertBox.classList.add("alert-inactive");
+      setTimeout(() => parentElement.remove(), 1000);
+    }, 5000);
   };
 
   closeUI = ({ target }) => {
@@ -65,7 +79,7 @@ Pass the "undefined" keyword to skip the param and move to the next
 
 document
   .querySelector(".oh")
-  .addEventListener("click", () => new AlertUI("Oh wow!!"));
+  .addEventListener("click", () => new AlertUI("Oh wow!!", "green"));
 
 document
   .querySelector(".good")

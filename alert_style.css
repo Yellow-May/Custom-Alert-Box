@@ -12,7 +12,7 @@
   right: 1rem;
   height: 5rem;
   width: 18rem;
-  background: rgba(17, 255, 0, 0.2);
+  border: thin dotted #000;
   border-radius: 0.8rem;
 }
 
@@ -95,13 +95,22 @@
 
 /* mode */
 .night-mode {
+  border: none;
   background: rgba(34, 17, 17, 0.5);
   color: #fee;
 }
 
 .day-mode {
+  border: none;
   background: rgba(221, 238, 238, 0.5);
   color: #022;
 }
 
 /* type */
+.green {
+  color: #1f0;
+}
+
+.red {
+  color: #f10;
+}

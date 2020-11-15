@@ -17,3 +17,7 @@ FEATURES
 
 - Night mode and Day mode option
 - Type options (success alerts, danger alerts)
+
+MODIFICATIONS
+
+- Modify the color schemes, height, width and positioning of the alert in the css file "alert_style.css" if need be.
