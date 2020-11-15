@@ -1,0 +1,107 @@
+/* Alert Styling */
+.alert-active {
+  animation: alertEntry 3s forwards;
+}
+
+.alert-inactive {
+  animation: alertExit 0.5s forwards;
+}
+
+.alert-box {
+  position: fixed;
+  right: 1rem;
+  height: 5rem;
+  width: 18rem;
+  background: rgba(17, 255, 0, 0.2);
+  border-radius: 0.8rem;
+}
+
+@keyframes alertEntry {
+  0% {
+    top: -120%;
+  }
+
+  20% {
+    top: 1rem;
+    transform: rotate(-10deg);
+  }
+
+  40% {
+    top: -5rem;
+  }
+
+  60% {
+    top: 1rem;
+    transform: rotate(10deg);
+  }
+
+  100% {
+    top: 1rem;
+    transform: rotate(0);
+  }
+}
+
+@keyframes alertExit {
+  to {
+    transform: translateY(-120%);
+  }
+}
+
+.alert-box::before {
+  content: "";
+  position: absolute;
+  top: calc(-100% + 0.3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 0.1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.alert-box span {
+  position: absolute;
+  top: 0.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.alert-box button.close {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.5rem;
+  border: none;
+  outline: none;
+  background: none;
+  color: #f10;
+  font-size: 120%;
+  cursor: pointer;
+  padding: 0;
+}
+
+.alert-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  letter-spacing: 0.08rem;
+}
+
+/* mode */
+.night-mode {
+  background: rgba(34, 17, 17, 0.5);
+  color: #fee;
+}
+
+.day-mode {
+  background: rgba(221, 238, 238, 0.5);
+  color: #022;
+}
+
+/* type */
